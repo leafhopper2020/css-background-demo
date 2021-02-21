@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    :root {
+        --color-gray: rgb(147, 149, 151);
+        --color-illuminating: rgb( 245, 223, 77);
+
+    }
+
+    .box-wrapper {
+        width: 600px;
+        height: 600px;
+        margin: 150px auto;
+        animation-name: box-wrapper;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+    .box-wrapper > div {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        mix-blend-mode: difference;
+        animation-name: box;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+    }
+    .box1 {
+        top: 0px;
+        left: 0px;
+        background-image: conic-gradient(var(--color-gray) 25%, var(--color-illuminating) 25%, var(--color-illuminating) 50%, var(--color-gray) 50%, var(--color-gray) 75%, var(--color-illuminating) 75%);
+    }
+    .box2 {
+        top: 0px;
+        left: 200px;
+        background-image: repeating-linear-gradient(45deg, var(--color-gray), var(--color-illuminating) 20px, var(--color-illuminating) 20px, var(--color-gray) 40px);
+    }
+    .box3 {
+        top: 0px;
+        left: 400px;
+        background-image: repeating-linear-gradient(-45deg, var(--color-gray), var(--color-illuminating) 20px, var(--color-illuminating) 40px, var(--color-gray) 60px, var(--color-gray) 80px);
+    }
+    .box4 {
+        top: 200px;
+        left: 0px;
+        background-image: conic-gradient( var(--color-gray), var(--color-illuminating) , var(--color-illuminating) , var(--color-gray));
+    }
+    .box5 {
+        top: 200px;
+        left: 200px;
+        background-image: 
+            linear-gradient(to bottom,  
+                var(--color-illuminating) 20px,
+                transparent 20px,
+                transparent 190px,
+                var(--color-illuminating) 190px),
+            linear-gradient(to right,
+                var(--color-illuminating) 30px, 
+                transparent 30px,
+                transparent 90px,
+                var(--color-gray) 90px,
+                var(--color-gray) 110px, 
+                transparent 110px,
+                transparent 170px,
+                var(--color-illuminating) 170px),
+            linear-gradient(to bottom,  
+                var(--color-illuminating) 60px,
+                var(--color-gray) 60px, 
+                var(--color-gray) 80px, 
+                transparent 80px,
+                transparent 120px,
+                var(--color-gray) 120px, 
+                var(--color-gray) 140px,
+                var(--color-illuminating) 140px),
+            linear-gradient(to right,  
+                var(--color-illuminating) 30px, 
+                var(--color-gray) 30px, 
+                var(--color-gray) 50px, 
+                var(--color-illuminating) 50px, 
+                var(--color-illuminating) 150px, 
+                var(--color-gray) 150px, 
+                var(--color-gray) 170px, 
+                var(--color-illuminating) 170px);
+        
+    }
+    .box6 {
+        top: 200px;
+        left: 400px;
+        background-image: linear-gradient(to bottom, var(--color-illuminating), var(--color-gray));
+    }
+    .box7 {
+        top: 400px;
+        left: 0px;
+        background-image: repeating-linear-gradient(-45deg, var(--color-gray), var(--color-gray) 20px, var(--color-illuminating) 20px, var(--color-illuminating) 40px);
+    }
+    .box8 {
+        top: 400px;
+        left: 200px;
+        background-image: radial-gradient(circle farthest-side at center, var(--color-gray), var(--color-illuminating));
+    }
+    .box9 {
+        top: 400px;
+        left: 400px;
+        background-image: radial-gradient(circle closest-side at 40px 60px, var(--color-gray), var(--color-illuminating));
+    }
+
+    @keyframes box-wrapper {
+        from {
+            transform: rotateZ(0)
+        }
+
+        to {
+            transform: rotateZ(1turn)
+        }
+    }
+
+    @keyframes box {
+        from {
+            transform: rotateX(0)
+        }
+
+        to {
+            top: 200px;
+            left: 200px;
+            transform: rotateZ(360deg)
+        }
+    }
+
+</style>
+<body>
+    <div class="box-wrapper">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+        <div class="box6"></div>
+        <div class="box7"></div>
+        <div class="box8"></div>
+        <div class="box9"></div>
+    </div>
+</body>
+</html>
